@@ -2328,7 +2328,7 @@ function refreshSelectors() {
     function sd50Sym(run, minGap, maxGap, maxPanel) {
       let cnt = Math.ceil(run / maxPanel);
       while (cnt < 600) {
-        let pw = Math.min(maxPanel, Math.floor(run / cnt / 50) * 50);
+        let pw = Math.min(maxPanel, Math.floor(run / cnt / 25) * 25);
         while (pw >= 200) {
           let discs = Math.max(2, Math.ceil((pw - 2 * edge) / MAX_SPACING) + 1);
           if (discs > MAX_DISCS_PER_PANEL) {
@@ -2350,8 +2350,8 @@ function refreshSelectors() {
     function sd50Mix(run, minGap, maxGap, maxPanel) {
       let cnt = Math.ceil(run / maxPanel);
       while (cnt < 600) {
-        for (let A = maxPanel; A >= 200; A -= 50) {
-          for (let B = A; B >= A - 200; B -= 50) {
+        for (let A = maxPanel; A >= 200; A -= 25) {
+          for (let B = A; B >= A - 200; B -= 25) {
             for (let k = 1; k < cnt; k++) {
               let discsA = Math.max(2, Math.ceil((A - 2 * edge) / MAX_SPACING) + 1);
               let discsB = Math.max(2, Math.ceil((B - 2 * edge) / MAX_SPACING) + 1);
